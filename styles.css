@@ -1,0 +1,229 @@
+/*
+ * Core styles for the Descartes seeding proposal site.
+ * The palette takes inspiration from the main DFi Labs website: soft
+ * gradients, clean typography and generous spacing.
+ */
+
+/* CSS variables for easy theming */
+:root {
+  --color-primary: #7b7bff; /* soft purple used for headings */
+  --color-secondary: #303048; /* dark text for contrast */
+  --color-bg-gradient-start: #faecee; /* pastel pink */
+  --color-bg-gradient-end: #eafdf4;   /* pastel green */
+  --color-alt-bg: #ffffff;           /* plain white for alternating sections */
+  --color-muted: #666680;            /* muted text */
+  --max-width: 1100px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* Container ensures consistent horizontal margins */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header styles */
+.site-header {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-gradient-start),
+    var(--color-bg-gradient-end)
+  );
+  padding-bottom: 4rem;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Sections */
+.content-section {
+  padding: 3rem 0;
+}
+
+.content-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.content-section h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+  max-width: 900px;
+}
+
+/* Alternate background */
+.alt-bg {
+  background: var(--color-alt-bg);
+}
+
+/* Icon list styling */
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.icon-list i {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+}
+
+/* Numbered lists */
+.numbered-list {
+  counter-reset: li;
+  margin: 1rem 0;
+  padding-left: 0;
+}
+
+.numbered-list > li {
+  list-style: none;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.numbered-list > li::before {
+  counter-increment: li;
+  content: counter(li) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Table styles for performance placeholder */
+.perf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  max-width: 600px;
+}
+
+.perf-table th,
+.perf-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.perf-table th {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.perf-table tr:nth-child(even) {
+  background: #f7f7fc;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member h4 {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.team-member p {
+  margin: 0 0 0.6rem;
+}
+
+/* Footer */
+.site-footer {
+  background: #fafafc;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
